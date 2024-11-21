@@ -80,8 +80,7 @@
           <strong>¡Pegate el salto!</strong>
         </h1>
         
-        <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">Pasa de comprar a proveedores locales a hacer tu propia importación.&nbsp;</p>
-
+        <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">Pasa de comprar a proveedores locales a hacer tu propia importación&nbsp;</p>
         <div class="mbr-section-btn"><a class="btn btn-white-outline display-7" href="index.html#about-us-15-utWSy3ZqnD">Descubre Más</a></div>
       </div>
     </div>
@@ -325,19 +324,19 @@
 							<div  id="box_checkboxes" >
 								<div class="col " >
 								 <label data-for="opcion_marcada" class="d-block p-3 rounded-pill shadow h-100 bg-white" >
-									<input data-class="bg-warning" checked type="checkbox" id="opcion_marcada" name="opcion_marcada" data-form-field="opcion_marcada" value="Quiero aprender a importar mis produtos." class="chk_custom" /> <strong>Quiero aprender</strong> a importar mis produtos.
+									<input data-class="bg-success" checked type="checkbox" id="opcion_marcada" name="opcion_marcada" data-form-field="opcion_marcada" value="Quiero aprender a importar mis produtos." class="chk_custom"  /> <strong>Quiero aprender</strong> a importar mis produtos.
 								 </label>
 								 </div>
 							 <div class="col-md col-sm-12 form-group mb-3 mb-3" data-for=""></div>  <!-- para que los botones no esten tan pegados-->
 								 <div class="col">
 								 <label data-for="opcion_marcada" class="d-block p-3 rounded-pill shadow h-100 bg-white">
-									<input data-class="bg-warning"  type="checkbox" id="opcion_marcada" name="opcion_marcada" data-form-field="opcion_marcada" value="Quiero que me ayuden a importar mis productos." class="chk_custom" /> <strong>Quiero que me ayuden </strong> a importar mis productos.
+									<input data-class="bg-success"  type="checkbox" id="opcion_marcada" name="opcion_marcada" data-form-field="opcion_marcada" value="Quiero que me ayuden a importar mis productos." class="chk_custom" /> <strong>Quiero que me ayuden </strong> a importar mis productos.
 								 </label>
 								 </div>
 							<div class="col-md col-sm-12 form-group mb-3 mb-3" data-for="">	</div> <!-- para que los botones no esten tan pegados-->
 								 <div class="col">
 								 <label data-for="opcion_marcada" class="d-block p-3 rounded-pill shadow h-100 bg-white">
-									<input data-class="bg-warning"  type="checkbox" id="opcion_marcada" name="opcion_marcada" data-form-field="opcion_marcada" value="¡Ayuda! Tengo un problema y necesito orientación." class="chk_custom" /> <strong>¡Ayuda! Tengo un problema</strong> y necesito orientación.
+									<input data-class="bg-success"  type="checkbox" id="opcion_marcada" name="opcion_marcada" data-form-field="opcion_marcada" value="¡Ayuda! Tengo un problema y necesito orientación." class="chk_custom" /> <strong>¡Ayuda! Tengo un problema</strong> y necesito orientación.
 								 </label>
 								 </div>
 							
@@ -362,7 +361,52 @@
 
         </div>
     </div>
-    
+   
+<!-- NUEVOOOO -->
+
+<script type="text/javascript">
+ let divPai = document.getElementById('box_checkboxes');
+
+ divPai.addEventListener('change', function(e) {
+ let hasClass = e.target.classList.contains('chk_custom');
+ if (e.target.type === 'checkbox' && hasClass) {
+ toggleCheckboxBackground(e.target);
+ }
+
+ });
+
+ function renderCheckboxes() {
+ const checkboxes = document.querySelectorAll('#box_checkboxes input[type="checkbox"]');
+ checkboxes.forEach((item, i) => {
+ toggleCheckboxBackground(item);
+ });
+ }
+
+ function toggleCheckboxBackground(checkbox) {
+
+ const parentElement = checkbox.parentElement;
+ const classParentElement = checkbox.getAttribute('data-class').split(' ');
+ let isHidden = (checkbox.getAttribute('data-hidden-chk') == 'true');
+ console.log(isHidden);
+
+ parentElement.classList.add(...classParentElement);
+
+ if (isHidden) {
+ checkbox.style.display = 'none';
+ }
+
+ if (!checkbox.checked) {
+ parentElement.classList.remove(...classParentElement);
+ }
+ }
+
+ document.addEventListener("DOMContentLoaded", function(event) {
+ renderCheckboxes();
+ });
+
+ </script>  
+
+<!-- FIN NUEVOOOO --> 
 
 </section>
 
