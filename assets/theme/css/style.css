@@ -963,3 +963,41 @@ blockquote {
 	top: 0;
 	left: -2400px;
 }
+
+
+
+
+/*-------------------------------------------------------------------------------*/
+
+/* Quitar la línea debajo de los botones */
+.nav-tabs {
+    border-bottom: none;
+}
+
+/* Estilizar los botones de navegación */
+.nav-tabs .nav-link {
+    background: transparent;
+    border: none;
+    color: #ffffff; /* Texto blanco para mejor visibilidad */
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+/* Botón activo con fondo azul y texto blanco */
+.nav-tabs .nav-link.active {
+    background: #051d56; /* Azul */
+    color: #fff !important;
+    border-radius: 20px;
+}
+
+/* Contenedor del contenido con fondo azul y texto blanco */
+.tab-content {
+    background: #051d56; /* Azul */
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    color: #ffffff; /* Letras blancas */
+}
+
+
